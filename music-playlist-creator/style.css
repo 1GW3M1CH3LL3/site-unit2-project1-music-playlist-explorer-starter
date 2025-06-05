@@ -4,3 +4,139 @@ body {
     padding: 0;
     background-color: #f8f8f8;
 }
+
+header{
+    background-color: palevioletred;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    text-align: center;
+
+}
+
+.playlist-cards{
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 100px;
+    justify-content: start;
+}
+.playlist-card{
+    background-color: lch(91.12% 50.12 196.39);
+    /* width: 16.9%; */
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 50px;
+    margin-top: 30px;
+    border-radius: 7px;
+    box-shadow: 0px 5px 5px lightblue;
+    
+    
+
+}
+
+.like{
+    display: flex;
+    flex-direction: row;
+}
+
+.like-icon{
+    padding-top: 12px;
+    padding-right: 5px;
+}
+#playlistCover{
+    padding-top: 5px;
+    
+}
+
+.playlist-title{
+    margin-top: 4px;
+    margin-bottom: 0px;
+}
+
+.creator{
+    margin-top: 4px;
+    margin-bottom: 0px;
+}
+
+.like-count{
+    padding-top: 5pxpx;
+    padding-bottom: 5px;
+}
+
+.modal{
+   display: none;
+   position: fixed; /* Stay in place */
+   z-index: 1; /* Sit on top */
+   left: 0;
+   top: 0;
+   /* display: flex; */
+   justify-self: center;
+   align-items: center;
+   width: 100%; /* Full width */
+   height: 100%; /* Full height */
+   overflow: auto; /* Enable scroll if needed */
+   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */}
+
+   .modal-content {
+   background-color: #fefefe;
+   margin: auto; 
+   padding: 20px;
+   border-radius: 20px;
+   box-shadow: #f8f8f8;
+   
+   width: 60%; /* Could be more or less, depending on screen size */ 
+   
+}
+
+#modalTop{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+#playlistInfo{
+    padding-left: 30px;
+    padding-top: 10px;
+}
+
+ul{
+    list-style: none;
+    margin: 0px;
+    padding-left: 0px;
+    padding-top: 10px;
+}
+
+#song{
+    display: flex;
+    background-color: aqua;
+    padding-left: 5px;
+    border-radius: 5px;
+    padding-top: 3px;
+    margin-bottom: 10px;
+}
+
+.songDetails{
+    margin-top: 5px;
+    font-size: 10px;
+    line-height: 1px;
+    padding-left: 10px;
+}
+
+#heartIcon{
+    margin-top: 15px;
+    margin-right: 5px;
+    color: white;
+}
+
+#shuffle-btn{
+    height: 25px;
+    margin-top: 10px;
+    margin-left: 0px;
+    background-color: aqua;
+
+}
+#shuffle-btn:hover{
+    background-color: rgba(0,0,0,0.4);
+    
+}

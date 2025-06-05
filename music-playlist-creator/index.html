@@ -6,17 +6,54 @@
     
     <title>Music Playlist Explorer</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <!-- Your header content here -->
+        <h2>Music Playlist Explorer</h2>
     </header>
 
     <main> 
+        <section class="playlist-cards">
+            <!-- <section class="playlist-card">
+                <img id="playlistCover" src="/site-unit2-project1-music-playlist-explorer-starter/music-playlist-creator/assets/img/playlist.png" alt="" width="180px" >
+                <h4 class="playlist-title">AfroBeats Mix</h4>
+                <p class="creator">Adaora</p>
+                <section class="like">
+                <i data-isliked = "false" id="heartIcon" class="fa-solid fa-heart"></i>     
+                <p id="like-count">34</p>
+                </section>
+            </section> -->
+        </section>
         <!-- Your main content here -->
     </main>
+    
+    <!-- Modal PopUp -->
+     <div id="playlistDetails" class="modal">
+        <div class="modal-content">
+        <section id="modalTop">
+            <img id="playlistImage" src="/site-unit2-project1-music-playlist-explorer-starter/music-playlist-creator/assets/img/playlist.png" alt="" width="120px" height="100px"> 
+            <section id="playlistInfo">
+                <h4 class="playlist-title">AfroBeat Mix</h4> 
+                <p class="creator">Adaora</p>
+            </section>
+        </section>
+        <section><button id="shuffle-btn">Shuffle</button></section>
+        <section id="playlistSongs">
+            <ul id="songs">
+                <li id="song">
+                    <section class="songCover"><img src="assets/img/song.png" alt="" width="60px" height="50px"></section>
+                    <section class="songDetails">
+                        <p class="songTitle">Beamer</p>
+                        <p class="artistName">Rema</p>
+                        <p class="albumName">Raves and Roses</p>
+                    </section>
+                </li>
+            </ul>
+        </section>
+        </div>
+     </div>
 
     <footer>
         <!-- Your footer content here -->
