@@ -12,6 +12,7 @@ body {
 
 header{
     background-color: #738a6e;
+    width: 100%;
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 15px;
@@ -25,14 +26,18 @@ h2{
     font-size: 30px;
     padding-left: 100px;
     color: white;
+    padding-right: 200px;
 }
 .links{
-    padding-top: 35px; 
+    padding-top: 25px; 
     display: flex;
-    padding-right: 100px;  
+    padding-right: 80px; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px; 
 }
 a{text-decoration: none;
     color: rebeccapurple;
+    padding-top: 10px;
 }
 .pages{
     margin-right: 30px;
@@ -80,8 +85,7 @@ a{text-decoration: none;
 }
 
 #add{
-    /* padding-top: 17px; */
-    padding-left: 80px;
+
     color: white;
     font-size: 40px;
 }
@@ -325,7 +329,7 @@ input{
 }
 
 #editform-container{
-    background-color: #bfcfbb;
+     background-color: #bfcfbb;
     margin: auto;
     margin: auto; 
     padding: 50px;
@@ -336,4 +340,19 @@ input{
     justify-content: center;
     height: fit-content;
 
+}
+
+#sort{
+    width: fit-content;
+    height: 30px;
+    margin-left: 20px;
+    margin-top: 7px;
+    border-radius: 18px;
+    padding: 2px 2px;
+    color: white;
+    background-color: #344c3d;
+
+}
+#sort:hover{
+    background-color: #738a6e;
 }

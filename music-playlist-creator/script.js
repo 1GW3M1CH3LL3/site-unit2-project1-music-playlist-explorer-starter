@@ -4,7 +4,7 @@ const createPlaylistCard = (playlist) => {
   playlistCard.className = "playlist-card";
   playlistCard.innerHTML = `
     <img id="playlistCover" src="/site-unit2-project1-music-playlist-explorer-starter/music-playlist-creator/assets/img/playlist.png" alt="" width="180px" >
-    <h4 class="playlist-title">${playlist.playlist_name} Mix</h4>
+    <h4 class="playlist-title">${playlist.playlist_name}</h4>
     <p class="creator">${playlist.playlist_author}</p>
     <section class = "playlist-cardfooter">
     <section class="like">
@@ -25,10 +25,7 @@ const createPlaylistCard = (playlist) => {
   const del = playlistCard.querySelector(".delete") 
   del.addEventListener("click", (delButton) => {
     delButton.stopPropagation()
-    //playlistCard.remove()
     playlists = playlists.filter(playlist => playlist.id !== Number(playlistCard.id))
-    console.log(playlists)
-    console.log(playlistCard.id)
     displayPlaylist()
     })
 
@@ -117,11 +114,13 @@ const displayPlaylist = () => {
     const shuffle_button = document.querySelector("#shuffle-btn")
     shuffle_button.addEventListener("click", (shuffle)=>{
         shuffle.stopPropagation()
-        shuffleSongs(playlist.songs)
-        console.log(shuffleSongs(playlist.songs))
+        // shuffleSongs(playlist.songs)
         const songList = document.getElementById("songs")
+        // const songList = null;
         songList.innerHTML = ""
+        console.log(songList);
         for(let song of shuffleSongs(playlist.songs)) { 
+            //console.log(song);
             const songElement = document.createElement("li")
             songElement.id = "song"
             songElement.innerHTML = `
@@ -179,7 +178,6 @@ const submitAdd = form.querySelector("#submit-addbtn")
 submitAdd.addEventListener("click", (addPlaylist)=>{
 addPlaylist.preventDefault()
 addPlaylist.stopPropagation()
-console.log("yeah")
 const playlistCards = document.querySelector(".playlist-cards");
 const newPlaylist = fname.value.trim()
 const newCreator = fcreator.value.trim() 
@@ -225,50 +223,54 @@ document.querySelector("#form-background").style.display = "none";
     
 
 })  
-const edit = playlistCard.querySelector(".edit") 
-const submitEdit = form.querySelector("#submit-editbtn")
-submitEdit.addEventListener("click", (editPlaylist) =>{
-  editPlaylist.preventDefault()
-  editPlaylist.stopPropagation()
-  const editCreator = fcreator.value.trim()
-  const editName = fname.value.trim()
-  playlistCard.innerHTML = `
-  <img id="playlistCover" src="/site-unit2-project1-music-playlist-explorer-starter/music-playlist-creator/assets/img/playlist.png" alt="" width="180px" >
-    <h4 class="playlist-title">${fname.value} Mix</h4>
-    <p class="creator">${fcreator.value}</p>
-    <section class = "playlist-cardfooter">
-    <section class="like">
-    <i data-isliked = "false"  id="heartIcon" class="fa-solid fa-heart"></i>
-    <p id="like-count">${playlist.likes}</p>
-    </section>
-    <section class="edit"> <i class="fa-solid fa-pen"></i></section>
-    <section class="delete"> <i  class="fa-solid fa-trash"></i></section>
-    </section>`
+
+// const playlistCards = document.getElementsByClassName("playlist-card")
+// for(const card of playlistCards){
+// const edit = card.querySelector(".edit") 
+// const form = document.querySelector("#editform-container")
+// const submitEdit = form.querySelector("#submit-editbtn")
+// console.log(submitEdit)
+// const likes = card.querySelector("#like-count").textContent
+// submitEdit.addEventListener("click", (editPlaylist) =>{
+//   console.log("firingg")
+//   editPlaylist.preventDefault()
+//   editPlaylist.stopPropagation()
+//   const editCreator = feditcreator.value.trim()
+//   const editName = feditname.value.trim()
+//   console.log(editCreator)
+//   console.log(editName)
+//   card.innerHTML = `
+//   <img id="playlistCover" src="/site-unit2-project1-music-playlist-explorer-starter/music-playlist-creator/assets/img/playlist.png" alt="" width="180px" >
+//     <h4 class="playlist-title">${editName} </h4>
+//     <p class="creator">${editCreator}</p>
+//     <section class = "playlist-cardfooter">
+//     <section class="like">
+//     <i data-isliked = "false"  id="heartIcon" class="fa-solid fa-heart"></i>
+//     <p id="like-count">${likes}</p>
+//     </section>
+//     <section class="edit"> <i class="fa-solid fa-pen"></i></section>
+//     <section class="delete"> <i  class="fa-solid fa-trash"></i></section>
+//     </section>`
+// document.querySelector("#editform-background").style.display = "none";
+// })
+
+// }
+
+const sort = document.getElementById("sort");
+sort.addEventListener("change", ()=>{
+  if(sort.value === "AZ"){
+    playlists.sort((a,b) => a.playlist_name.localeCompare(b.playlist_name))
+    displayPlaylist()
+  
+
+}else if(sort.value === "ZA"){
+  playlists.sort((a,b) => b.playlist_name.localeCompare(a.playlist_name))
+  displayPlaylist()
+}
+else if(sort.value == "likes"){
+  playlists.sort((a,b) => b.likes - a.likes)
+  displayPlaylist()
+}
 
 })
 
-
-// const arr = [
-//       {
-//         "title": "Ocean Eyes",
-//         "artist": "Billie Eilish",
-//         "album": "Don't Smile at Me",
-//         "cover": "https://example.com/images/ocean-eyes.jpg"
-//       },
-//       {
-//         "title": "Sunflower",
-//         "artist": "Post Malone",
-//         "album": "Spider-Man: Into the Spider-Verse",
-//         "cover": "https://example.com/images/sunflower.jpg"
-//       },
-//       {
-//         "title": "Blinding Lights",
-//         "artist": "The Weeknd",
-//         "album": "After Hours",
-//         "cover": "https://example.com/images/blinding-lights.jpg"
-//       }
-//     ]
-
-
-// console.log('1.' ,arr);
-// console.log('2. ', shuffleSongs(arr));

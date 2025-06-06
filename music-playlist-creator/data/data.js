@@ -1,13 +1,13 @@
 let playlists = [
   {
     "id": 1,
-    "playlist_name": "Chill Vibes",
-    "playlist_author": "user123",
+    "playlist_name": "Alte Cruise",
+    "playlist_author": "ikykSanti",
     "playlist_art": "https://example.com/images/chill-vibes.jpg",
     "songs": [
       {
-        "title": "Ocean Eyes",
-        "artist": "Billie Eilish",
+        "title": "FTR",
+        "artist": "Cruel Santino, S-Smart",
         "album": "Don't Smile at Me",
         "cover": "https://example.com/images/ocean-eyes.jpg",
         "time": "3:20"
