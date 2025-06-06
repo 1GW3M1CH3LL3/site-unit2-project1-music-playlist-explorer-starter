@@ -11,9 +11,23 @@ header{
     padding-bottom: 5px;
     padding-left: 15px;
     text-align: center;
+    display: flex;
+    justify-content: space-between;
 
 }
 
+.links{
+   padding-top: 25px; 
+   display: flex;
+
+}
+.pages{
+    margin-right: 30px;
+    color: black;
+}
+.pages:hover{
+    color: white;
+}
 .playlist-cards{
     display: flex;
     flex-wrap: wrap;
@@ -139,4 +153,32 @@ ul{
 #shuffle-btn:hover{
     background-color: rgba(0,0,0,0.4);
     
+}
+
+.featured-playlist{
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+.featured-songs{
+    width: 50%;
+    
+}
+#featured-song{
+    background-color: blue;
+    border-radius: 5px;
+    font-size: 10px;
+    line-height: 3px;
+    display: flex;
+    margin-bottom: 30px;
+    margin-left: 40px;
+    padding-left: 0px;
+}
+
+.featured-songdetails{
+    margin-left: 20px;
+}
+
+.featured-playlistname{
+    text-align: center;
 }

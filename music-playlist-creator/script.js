@@ -12,7 +12,17 @@ const createPlaylistCard = (playlist) => {
     `;
   return playlistCard;
 };
+const shuffleSongs = (_array) =>{
+    const array = [..._array]
+    for(let i = array.length - 1; i > 0; i--){
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i] , array[j]] = [array[j] , array[i]];
+    }
+    
+    
+    return array;
 
+}
 const displayPlaylist = () => {
   const playlistCards = document.querySelector(".playlist-cards");
 //   const playlistCard = document.querySelector(".playlist-card");
@@ -71,6 +81,31 @@ const displayPlaylist = () => {
         playlist_heart.dataset.isliked = "false";
       }
     });
+    const shuffle_button = document.querySelector("#shuffle-btn")
+    shuffle_button.addEventListener("click", (shuffle)=>{
+        shuffle.stopPropagation()
+        shuffleSongs(playlist.songs)
+        console.log(shuffleSongs(playlist.songs))
+        const songList = document.getElementById("songs")
+        songList.innerHTML = ""
+        for(let song of shuffleSongs(playlist.songs)) { 
+            const songElement = document.createElement("li")
+            songElement.id = "song"
+            songElement.innerHTML = `
+        <section class="songCover"><img src="assets/img/song.png" alt="" width="60px" height="50px"></section>
+        <section class="songDetails">
+                        <p class="songTitle">${song.title}</p>
+                        <p class="artistName">${song.artist}</p>
+                        <p class="albumName">${song.album}</p>
+                    
+</section>`
+songList.appendChild(songElement)
+        }
+        
+
+    }
+
+    )
   }
 };
 
@@ -101,39 +136,28 @@ const editModal = (playlist) => {
   }
 };
 
-const shuffleSongs = (array) =>{
-    for(let i = array.length - 1; i > 0; i--){
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i] , array[j]] = [array[j] , array[i]];
-        console.log(array[i]);
-        console.log[array[j]];
-    }
-    
-    
-    return [...array];
 
-}
-const arr = [
-      {
-        "title": "Ocean Eyes",
-        "artist": "Billie Eilish",
-        "album": "Don't Smile at Me",
-        "cover": "https://example.com/images/ocean-eyes.jpg"
-      },
-      {
-        "title": "Sunflower",
-        "artist": "Post Malone",
-        "album": "Spider-Man: Into the Spider-Verse",
-        "cover": "https://example.com/images/sunflower.jpg"
-      },
-      {
-        "title": "Blinding Lights",
-        "artist": "The Weeknd",
-        "album": "After Hours",
-        "cover": "https://example.com/images/blinding-lights.jpg"
-      }
-    ]
+// const arr = [
+//       {
+//         "title": "Ocean Eyes",
+//         "artist": "Billie Eilish",
+//         "album": "Don't Smile at Me",
+//         "cover": "https://example.com/images/ocean-eyes.jpg"
+//       },
+//       {
+//         "title": "Sunflower",
+//         "artist": "Post Malone",
+//         "album": "Spider-Man: Into the Spider-Verse",
+//         "cover": "https://example.com/images/sunflower.jpg"
+//       },
+//       {
+//         "title": "Blinding Lights",
+//         "artist": "The Weeknd",
+//         "album": "After Hours",
+//         "cover": "https://example.com/images/blinding-lights.jpg"
+//       }
+//     ]
 
 
-console.log('1.' ,arr);
-console.log('2. ', shuffleSongs(arr));
+// console.log('1.' ,arr);
+// console.log('2. ', shuffleSongs(arr));
