@@ -10,17 +10,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <main> 
     <header>
         <section><h2>Music Playlist Explorer</h2></section>
         <section class="links">
             <a href="index.html" class="pages">All</a>
             <a href = "featured.html" class = "pages">Featured</a>
+            <i id="add" class ="fa-solid fa-plus"></i>
             
         </section>
 
     </header>
 
-    <main> 
+    
         <section class="playlist-cards">
             <!-- <section class="playlist-card">
                 <img id="playlistCover" src="/site-unit2-project1-music-playlist-explorer-starter/music-playlist-creator/assets/img/playlist.png" alt="" width="180px" >
@@ -31,12 +33,13 @@
                 <p id="like-count">34</p>
                 </section>
             </section> -->
+            
         </section>
         <!-- Your main content here -->
-    </main>
+    
     
     <!-- Modal PopUp -->
-     <div id="playlistDetails" class="modal">
+    <div id="playlistDetails" class="modal">
         <div class="modal-content">
         <section id="modalTop">
             <img id="playlistImage" src="/site-unit2-project1-music-playlist-explorer-starter/music-playlist-creator/assets/img/playlist.png" alt="" width="120px" height="100px"> 
@@ -59,8 +62,61 @@
             </ul>
         </section>
         </div>
-     </div>
+    </div>
 
+<!-- Form to edit existing playist -->
+    <section id="editform-background">
+        <section id="editform-container"> 
+        <form action="">
+        <label for="feditname">Name:</label><br>
+        <input id="feditname" type="text"><br>
+
+        <label for="feditcreator">Creator:</label> <br>
+        <input id="feditcreator" type="text"><br>
+
+        <!-- <label for="fsongname">Song Name:</label> <br>
+        <input id="fsongname" type="text"><br>
+
+        <label for="fsongartist">Song Artist:</label> <br>
+        <input id="fsongartist" type="text"><br>
+
+        <label for="fsongalbum">Song Album:</label> <br>
+        <input id="fsongalbum" type="text"><br>
+
+        <label for="fsongduration">Song Duration:</label> <br>
+        <input id="fsongduration" type="text"><br> -->
+        <button id="submit-editbtn">Edit</button>
+    </form>
+    
+    </section> 
+    </section>
+    <!-- Form to add new playlist -->
+    <section id="form-background">
+        <section id="form-container"> 
+        <form action="">
+        <label for="fname">Name:</label><br>
+        <input id="fname" type="text"><br>
+
+        <label for="fcreator">Creator:</label> <br>
+        <input id="fcreator" type="text"><br>
+
+        <label for="fsongname">Song Name:</label> <br>
+        <input id="fsongname" type="text"><br>
+
+        <label for="fsongartist">Song Artist:</label> <br>
+        <input id="fsongartist" type="text"><br>
+
+        <label for="fsongalbum">Song Album:</label> <br>
+        <input id="fsongalbum" type="text"><br>
+
+        <label for="fsongduration">Song Duration:</label> <br>
+        <input id="fsongduration" type="text"><br>
+        <button id="submit-addbtn">Add</button>
+    </form>
+    
+    </section> 
+    </section>
+    </main>
     <footer>
         <!-- Your footer content here -->
     </footer>
