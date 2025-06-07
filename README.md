@@ -4,7 +4,7 @@ Submitted by: Adaora Michelle Igwe
 
 Estimated time spent: **30** hours spent in total
 
-Deployed Application (**required**): [Music Playlist Explorer Deployed Site](ADD_LINK_HERE)
+Deployed Application (**required**): [Music Playlist Explorer Deployed Site]`https://site-unit2-project1-music-playlist-e0t5.onrender.com`
 
 ### Application Features
 
