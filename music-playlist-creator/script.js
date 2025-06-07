@@ -3,7 +3,7 @@ const createPlaylistCard = (playlist) => {
   playlistCard.setAttribute("id", playlist.id)
   playlistCard.className = "playlist-card";
   playlistCard.innerHTML = `
-    <img id="playlistCover" src="/site-unit2-project1-music-playlist-explorer-starter/music-playlist-creator/assets/img/playlist.png" alt="" width="180px" >
+    <img id="playlistCover" src="assets/img/playlist.png" alt="" width="180px" >
     <h4 class="playlist-title">${playlist.playlist_name}</h4>
     <p class="creator">${playlist.playlist_author}</p>
     <section class = "playlist-cardfooter">
